@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "./HeroSection.module.css";
 
+const basePath = process.env.GITHUB_ACTIONS === "true" ? "/agencia-aurora" : "";
+
 export default function HeroSection() {
   return (
     <section className={styles.hero}>
@@ -22,7 +24,7 @@ export default function HeroSection() {
 
         <div className={styles.imageContainer}>
           <Image
-            src="/hero-aurora.svg"
+            src={`${basePath}/hero-aurora.svg`}
             alt="Equipe da Agência Aurora trabalhando em projetos digitais"
             width={560}
             height={420}
